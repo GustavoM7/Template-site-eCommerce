@@ -13,7 +13,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();
 
 // Initialize Firebase
-var config = {
+const config = {
     apiKey: "AIzaSyDuurlI7egkjWe04ar_o8sCN9Du8uscMV0",
     authDomain: "template-ecommerce.firebaseapp.com",
     databaseURL: "https://template-ecommerce.firebaseio.com",
