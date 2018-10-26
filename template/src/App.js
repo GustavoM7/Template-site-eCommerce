@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 //import ProdutoUser from './Components/ProdutoUser/ProdutoUser';
-import CampoLogin from './Components/CampoLogin/CampoLogin'
+//import CampoLogin from './Components/CampoLogin/CampoLogin'
+import Navbar from './Components/Navbar/Navbar'
 
 class App extends Component {
   render() {
@@ -26,11 +27,13 @@ class App extends Component {
       </div>*/
 
 
-      <div>
+      /*<div>
         <h1>Huecommerce</h1>
         <p>-------------------------------------</p>
         <h3>Login Cliente:</h3>
-        <CampoLogin />
+        <CampoLogin />*/
+      <div>
+       <Navbar />
       </div>
     );
   }

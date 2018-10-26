@@ -15,7 +15,7 @@ class CampoLogin extends Component {
             <div>
             <input id='email' type='text' /><br/>
             <input id='senha' type='text' /><br/>
-            <button onClick = {this.CriarUser} >enviar</button>
+            <button onClick = {this.CriarUser} class="btn btn-primary">enviar</button>
             </div>
         )
     }
