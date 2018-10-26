@@ -5,7 +5,7 @@ class ProdutoUser extends Component {
         return(
             <div>
                 <p><b>Nome:</b> {this.props.name}</p>
-                <img src={this.props.endereco}></img>
+                <img src={this.props.endereco} alt=''></img>
                 <p><b>Preço:</b> {this.props.preco}</p>
             </div>
         );

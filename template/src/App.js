@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import ProdutoUser from './Components/ProdutoUser/ProdutoUser';
+//import ProdutoUser from './Components/ProdutoUser/ProdutoUser';
+import CampoLogin from './Components/CampoLogin/CampoLogin'
 
 class App extends Component {
   render() {
@@ -27,9 +28,9 @@ class App extends Component {
 
       <div>
         <h1>Huecommerce</h1>
-
-        Lojinha top:
-        <ProdutoUser name='Teste' endereco='https://uploads.spiritfanfiction.com/fanfics/historias/201704/uma-historia-completamente-aleatoria-8572110-030420172200.jpg'  preco='0,00'/>
+        <p>-------------------------------------</p>
+        <h3>Login Cliente:</h3>
+        <CampoLogin />
       </div>
     );
   }
