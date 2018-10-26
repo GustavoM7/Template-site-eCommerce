@@ -17,4 +17,4 @@ Template de site de eCommerce funcional desenvolvido em React e integrado ao Fir
 - Sistema de carrinho
 - Sistema de compra com cálculo de frete
 
-### Feito
+### Feito:
