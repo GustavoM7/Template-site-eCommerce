@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Home from '../Home/Home';
 import Sobre from '../Sobre/Sobre';
 import Contato from '../Contato/Contato';
+import CampoLogin from '../CampoLogin/CampoLogin';
 
 class Navbar extends Component {
     state = {
@@ -28,7 +29,7 @@ class Navbar extends Component {
 
     GoLogin = () => {
         this.setState({
-            container: <Home/>
+            container: <CampoLogin/>
         });
     }
 
@@ -45,10 +46,10 @@ class Navbar extends Component {
                             <button class="btn btn-warning" onClick={this.GoHome}>Home</button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-warning" onClick={this.GoContato}>Sobre</button>
+                            <button class="btn btn-warning" onClick={this.GoSobre}>Sobre</button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-warning" onClick={this.GoSobre}>Contato</button>
+                            <button class="btn btn-warning" onClick={this.GoContato}>Contato</button>
                         </li>
                       </ul>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="button" onClick={this.GoLogin}>Login</button>

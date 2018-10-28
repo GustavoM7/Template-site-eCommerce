@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-//import ProdutoUser from './Components/ProdutoUser/ProdutoUser';
-//import CampoLogin from './Components/CampoLogin/CampoLogin'
 import Navbar from './Components/Navbar/Navbar';
-//import Home from './Components/Home/Home';
-//import Corpo from './Components/Corpo/Corpo';
 
 class App extends Component {
   render() {
@@ -37,7 +33,7 @@ class App extends Component {
       <div>
        <Navbar />
 
-       <div class="card text-center fixed-bottom">
+       <div class="card text-center fixed-bottom float-right">
        <div class="card-footer text-muted">&copy;2018 Todos os direitos reservados.</div>
        </div>
       </div>
