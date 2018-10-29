@@ -13,7 +13,7 @@ Template de site de eCommerce funcional desenvolvido em React e integrado ao Fir
 - Sistema de histórico de compras (Firebase Realtime database)
 
 #### Área do usuário
-- Área de Login com obtenção de dados do cliente (Firebase Auth + Realtime database)
+- Área de Login com obtenção de dados do cliente (Firebase Auth + Realtime database) (Fazendo)
 - Sistema de carrinho
 - Sistema de compra com cálculo de frete
 
