@@ -33,8 +33,8 @@ class App extends Component {
       <div>
        <Navbar />
 
-       <div class="card text-center fixed-bottom float-right">
-       <div class="card-footer text-muted">&copy;2018 Todos os direitos reservados.</div>
+       <div className="card text-center fixed-bottom float-right">
+       <div className="card-footer text-muted">&copy;2018 Todos os direitos reservados.</div>
        </div>
       </div>
     );

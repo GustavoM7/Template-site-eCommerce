@@ -10,6 +10,7 @@ class CampoCadastro extends Component {
         CidadeField: "",
         EstadoField: "",
         CEPField: "",
+        NomeField: "",
         alerts: ""
     }
 
@@ -28,6 +29,12 @@ class CampoCadastro extends Component {
     UpdateEnderecoValue = (event) => {
         this.setState({
             EnderecoField: event.target.value
+        });
+    }
+
+    UpdateNomeValue = (event) => {
+        this.setState({
+            NomeField: event.target.value
         });
     }
 
@@ -62,16 +69,21 @@ class CampoCadastro extends Component {
         let cidade = this.state.CidadeField;
         let estado = this.state.EstadoField;
         let CEP = this.state.CEPField;
-        if (this.state.EstadoField !== "" && this.state.CidadeField !== "" && this.state.CEPField !== "" && this.state.EnderecoField !== ""){
+        let nome = this.state.NomeField;
+        if (this.state.EstadoField !== "" && this.state.CidadeField !== "" && this.state.CEPField !== "" && this.state.EnderecoField !== "" && this.state.NomeField !== ""){
             firebase.auth().createUserWithEmailAndPassword(email, senha).then(function(){
                 let userId = firebase.auth().currentUser.uid;        
                 firebase.database().ref('clientes/' + userId).set({
+                    nome: nome,
                     email: email,
                     endereco: endereco,
                     cidade: cidade,
                     estado: estado,
                     CEP: CEP
-                  });                
+                  }).then(function(){
+                        window.location.reload();
+                    }
+                  );                
             }).catch(this.setState({
                 alerts: <Alerts title="Erro inesperado!" text="Verifique os dados de cadastro!" />
             }))
@@ -86,45 +98,53 @@ class CampoCadastro extends Component {
         return(
             <div>
                 <form>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email:</label>
-                            <input type="email" class="form-control" id="inputEmail4" onChange={this.UpdateEmailValue} value={this.state.EmailField}/>
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <label htmlFor="inputEmail4">Email:</label>
+                            <input type="email" className="form-control" id="inputEmail4" onChange={this.UpdateEmailValue} value={this.state.EmailField}/>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputPassword4">Senha:</label>
-                            <input type="password" class="form-control" id="inputPassword4" onChange={this.UpdateSenhaValue} value={this.state.SenhaField}/>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="inputPassword4">Senha:</label>
+                            <input type="password" className="form-control" id="inputPassword4" onChange={this.UpdateSenhaValue} value={this.state.SenhaField}/>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Endereço:</label>
-                        <input type="text" class="form-control" id="inputAddress" onChange={this.UpdateEnderecoValue} value={this.state.EnderecoField}/>
+                    <div className="form-group">
+                        <label htmlFor="inputAddress">Endereço:</label>
+                        <input type="text" className="form-control" id="inputAddress" onChange={this.UpdateEnderecoValue} value={this.state.EnderecoField}/>
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="inputName">Nome:</label>
+                        <input type="text" className="form-control" id="inputName" onChange={this.UpdateNomeValue} value={this.state.NomeField}/>
                     </div>
                     
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputCity">Cidade:</label>
-                            <input type="text" class="form-control" id="inputCity" onChange={this.UpdateCidadeValue} value={this.state.CidadeField}/>
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <label htmlFor="inputCity">Cidade:</label>
+                            <input type="text" className="form-control" id="inputCity" onChange={this.UpdateCidadeValue} value={this.state.CidadeField}/>
                         </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputState">Estado:</label>
-                                <input type="text" class="form-control" id="inputState" onChange={this.UpdateEstadoValue} value={this.state.EstadoField}/>
+                        <div className="form-group col-md-4">
+                            <label htmlFor="inputState">Estado:</label>
+                                <input type="text" className="form-control" id="inputState" onChange={this.UpdateEstadoValue} value={this.state.EstadoField}/>
                         </div>
-                        <div class="form-group col-md-2">
-                            <label for="inputZip">CEP:</label>
-                                <input type="text" class="form-control" id="inputZip" onChange={this.UpdateCEPValue} value={this.state.CEPField}/>
+                        <div className="form-group col-md-2">
+                            <label htmlFor="inputZip">CEP:</label>
+                                <input type="text" className="form-control" id="inputZip" onChange={this.UpdateCEPValue} value={this.state.CEPField}/>
                         </div>
                     </div>
                 </form>
-                <div class="container text-center">
-                        <button type="button" class="btn btn-outline-success btn-lg" onClick={this.NovoCliente}>Enviar</button>
+                <div className="container text-center">
+                        <button type="button" className="btn btn-outline-success btn-lg" onClick={this.NovoCliente}>Enviar</button>
                         <br/><br/>
                         {this.state.alerts}
                 </div>
                         
             </div>
         )
-    };
+    }
+
+    componentDidMount(){}
+        
 }
 
 export default CampoCadastro;
