@@ -4,7 +4,12 @@ class Home extends Component {
     render(){
         return(
             <div>
-                <h3>Uma home bacana</h3>
+               <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">HueCommerce</h1>
+                        <p class="lead">Um ecommcerce zoero.</p>
+                    </div>
+                </div>
             </div>
         );
     };

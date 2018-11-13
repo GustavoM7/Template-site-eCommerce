@@ -3,8 +3,10 @@ import firebase from 'firebase';
 import Home from '../Home/Home';
 import Sobre from '../Sobre/Sobre';
 import Contato from '../Contato/Contato';
+import Lojinha from '../Lojinha/Lojinha';
 import CampoLogin from '../CampoLogin/CampoLogin';
 import Logout from '../Logout/Logout';
+import Adm from '../Adm/Adm';
 
 class Navbar extends Component {
     state = {
@@ -41,12 +43,18 @@ class Navbar extends Component {
                         <li className="nav-item">
                             <button className="btn btn-warning" onClick={() => this.GoToPag(<Contato/>)}>Contato</button>
                         </li>
+                        <li className="nav-item">
+                            <button className="btn btn-warning" onClick={() => this.GoToPag(<Lojinha/>)}>Lojinha</button>
+                        </li>
                       </ul>
                     <div id="toLogin">
-                    <button className="btn btn-outline-success my-2 my-sm-0" type="button" onClick={() => this.GoToPag(<CampoLogin/>)}>Login</button>
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="button" onClick={() => this.GoToPag(<CampoLogin/>)}>Login</button>
                     </div>
                     <div id="toLogout" style={{display: 'none'}}>
-                    <Logout/>
+                        <Logout/>
+                    </div>
+                    <div id="toAdm" className="d-none">
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="button" onClick={() => this.GoToPag(<Adm/>)}>Administrar</button>
                     </div>
 
             </div>
@@ -64,6 +72,13 @@ class Navbar extends Component {
               let buttonLogout = document.getElementById("toLogout");
               buttonLogin.setAttribute("style", "display: none");
               buttonLogout.setAttribute("style", "display: block");
+              let email = firebase.auth().currentUser.email;
+
+              if(email === "adm@dm.com"){
+                  let buttonAdm = document.getElementById("toAdm");
+                  buttonAdm.className = "d-block";
+              }
+
             }
           });
     }

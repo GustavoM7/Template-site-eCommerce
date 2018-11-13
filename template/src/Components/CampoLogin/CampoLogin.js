@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import CampoCadastro from '../CampoCadastro/CampoCadastro';
+import Alerts from '../Alerts/Alerts';
 import firebase from 'firebase';
 
 class CampoLogin extends Component {
     state = {
         CadastroOn: "",
         LEmailField: "",
-        LSenhaField: ""
+        LSenhaField: "",
+        alert: ""
     }
 
     UpdateLEmailValue = (event) => {
@@ -28,7 +30,11 @@ class CampoLogin extends Component {
             firebase.auth().signInWithEmailAndPassword(email, senha).then(function() {
                 console.log("Está logado!");
                 window.location.reload();
-            });
+            }).catch( function () {
+                    let div = document.getElementById("escondida");
+                    div.setAttribute("style", "display: block");
+                }
+            )
         })
     }
 
@@ -68,8 +74,11 @@ class CampoLogin extends Component {
                     <div className="container text-center">
                         <button type="button" className="btn btn-outline-success btn-lg" onClick={this.Logar}>Entrar</button>
                     </div>
-                    
+                    {this.state.alert}
                     <br/>
+                    <div id="escondida" style={{display: 'none'}}>
+                            <Alerts title="Erro inesperado!" text="Achou que ia logar? Achou errado, otário!"/> 
+                    </div>
                     <h5 className="card-title text-center">Ainda não possui uma conta? Cadastre-se Já!</h5>
                     <div className="container text-center">
                         <button type="button" className="btn btn-warning btn-lg" onClick={this.ShowCadastro}>Cadastrar</button>

@@ -4,7 +4,12 @@ class Contato extends Component {
     render(){
         return(
             <div>
-                <h3>Um contato bacana</h3>
+               <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Entre em contato conosco</h1>
+                        <p class="lead">Boa sorte.</p>
+                    </div>
+                </div>
             </div>
         );
     };
