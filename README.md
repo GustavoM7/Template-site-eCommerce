@@ -5,9 +5,9 @@ Template de site de eCommerce funcional desenvolvido em React e integrado ao Fir
 - Home
 - Sobre
 - Contato
-- Revisão react
+- Revisão react (fazendo)
 - Tratamento de erros
-- Navegação com router
+- Navegação com router (fazendo)
 
 ### Feito:
 - Área de Login com obtenção de dados do cliente (Firebase Auth + Realtime database)

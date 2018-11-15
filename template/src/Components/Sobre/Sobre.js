@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Sobre extends Component {
-    render(){
+const Sobre = () => {
         return(
             <div>
                 <div class="jumbotron jumbotron-fluid">
@@ -12,7 +11,6 @@ class Sobre extends Component {
                 </div>
             </div>
         );
-    };
 };
 
 export default Sobre;

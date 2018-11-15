@@ -107,6 +107,8 @@ class Lojinha extends Component {
                         foto.src = url;
                     })
 
+                    foto.className = "img-thumbnail"
+
                     let des = document.createElement('p');
                     des.className = 'card-text';
                     des.innerHTML = 'Descrição: ' +descricao;

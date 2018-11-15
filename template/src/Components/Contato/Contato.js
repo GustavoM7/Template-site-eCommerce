@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Contato extends Component {
-    render(){
+const Contato = () => {
         return(
             <div>
                <div class="jumbotron jumbotron-fluid">
@@ -12,7 +11,6 @@ class Contato extends Component {
                 </div>
             </div>
         );
-    };
 };
 
 export default Contato;
